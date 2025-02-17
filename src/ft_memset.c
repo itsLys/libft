@@ -6,11 +6,11 @@
 /*   By: ihajji <ihajji@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 11:32:09 by ihajji            #+#    #+#             */
-/*   Updated: 2024/11/09 11:32:09 by ihajji           ###   ########.fr       */
+/*   Updated: 2025/02/17 18:02:01 by ihajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 void	*ft_memset(void *s, int c, size_t n)
 {

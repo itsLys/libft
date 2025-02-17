@@ -1,16 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   print_char.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ihajji <ihajji@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/09 11:32:09 by ihajji            #+#    #+#             */
-/*   Updated: 2025/02/17 18:01:14 by ihajji           ###   ########.fr       */
+/*   Created: 2024/11/25 14:21:09 by ihajji            #+#    #+#             */
+/*   Updated: 2024/11/30 09:31:20 by ihajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int c)
+#include "ft_printf.h"
+
+int	handle_char(t_flags *f, int c)
 {
-	return ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));
+	int	count;
+
+	count = 0;
+	if (!f->left_adjusted)
+		count += print_width(f, 1);
+	count += print(c);
+	if (f->left_adjusted)
+		count += print_width(f, 1);
+	return (count);
 }

@@ -6,12 +6,11 @@
 /*   By: ihajji <ihajji@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 11:32:09 by ihajji            #+#    #+#             */
-/*   Updated: 2024/11/09 11:32:09 by ihajji           ###   ########.fr       */
+/*   Updated: 2025/02/17 17:59:05 by ihajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static size_t	count_words(const char *s, char c)
 {
@@ -78,6 +77,3 @@ char	**ft_split(char const *s, char c)
 	}
 	return (list);
 }
-
-// NOTE:
-//	what is const char * vs const char

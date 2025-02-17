@@ -1,48 +1,91 @@
-SRC 		= ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c \
-			  ft_itoa.c ft_atof.c ft_atoi.c ft_bzero.c ft_calloc.c ft_memchr.c ft_memcmp.c  \
-			  ft_memcpy.c ft_strisnum.c ft_memmove.c ft_memset.c \
-			  ft_putchar_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_putstr_fd.c \
-			  ft_split.c ft_strchr.c ft_strdup.c ft_striteri.c ft_strjoin.c  \
-			  ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strmapi.c ft_strncmp.c  \
-			  ft_strnstr.c ft_strrchr.c ft_strtrim.c ft_substr.c \
-			  ft_tolower.c ft_strcmp.c ft_toupper.c
-SRC_BONUS 	= ft_lstadd_back_bonus.c ft_lstadd_front_bonus.c \
-			  ft_lstclear_bonus.c ft_lstdelone_bonus.c ft_lstiter_bonus.c \
-			  ft_lstlast_bonus.c ft_lstmap_bonus.c ft_lstnew_bonus.c \
-			  ft_lstsize_bonus.c
-INCLUDES	= -I./headers
-OBJDIR		= obj
-SRCDIR		= src
-NAME		= libft.a
-CC 			= cc -c -Wall -Wextra -Werror
-AR			= ar rcs
-OBJ 		= $(addprefix $(OBJDIR)/, $(SRC:.c=.o))
-OBJ_BONUS	= $(addprefix $(OBJDIR)/, $(SRC_BONUS:.c=.o))
+vpath %.c src src/ft_printf
 
-RED     	= \033[0;31m
-GREEN   	= \033[0;32m
-BLUE    	= \033[0;34m
-YELLOW  	= \033[0;33m
-BOLD    	= \033[1m
-RESET   	= \033[0m
-RM			= rm -rf
+GREEN  = 			\033[0;32m
+YELLOW = 			\033[0;33m
+RED    = 			\033[0;31m
+RESET  = 			\033[0m
+SRC =				src/ft_isalnum.c \
+			 		src/ft_isalpha.c \
+			 		src/ft_isascii.c \
+			 		src/ft_isdigit.c \
+			 		src/ft_isprint.c \
+			 		src/ft_itoa.c \
+			 		src/ft_atof.c \
+			 		src/ft_atoi.c \
+			 		src/ft_bzero.c \
+			 		src/ft_calloc.c \
+			 		src/ft_memchr.c \
+			 		src/ft_memcmp.c \
+			 		src/ft_memcpy.c \
+			 		src/ft_strisnum.c \
+			 		src/ft_memmove.c \
+			 		src/ft_memset.c \
+			 		src/ft_putchar_fd.c \
+			 		src/ft_putendl_fd.c \
+			 		src/ft_putnbr_fd.c \
+			 		src/ft_putstr_fd.c \
+			 		src/ft_split.c \
+			 		src/ft_strchr.c \
+			 		src/ft_strdup.c \
+			 		src/ft_striteri.c \
+			 		src/ft_strjoin.c \
+			 		src/ft_strlcat.c \
+			 		src/ft_strlcpy.c \
+			 		src/ft_strlen.c \
+			 		src/ft_strmapi.c \
+			 		src/ft_strncmp.c \
+			 		src/ft_strnstr.c \
+			 		src/ft_strrchr.c \
+			 		src/ft_strtrim.c \
+			 		src/ft_substr.c \
+			 		src/ft_tolower.c \
+			 		src/ft_strcmp.c \
+			 		src/ft_toupper.c \
+			 		src/ft_lstadd_back_bonus.c \
+			 		src/ft_lstadd_front_bonus.c \
+			 		src/ft_lstclear_bonus.c \
+			 		src/ft_lstdelone_bonus.c \
+			 		src/ft_lstiter_bonus.c \
+			 		src/ft_lstlast_bonus.c \
+			 		src/ft_lstmap_bonus.c \
+			 		src/ft_lstnew_bonus.c \
+			 		src/ft_lstsize_bonus.c \
+
+FT_PRINTF_SRC =		src/ft_printf/ft_printf_bonus.c \
+					src/ft_printf/parsing.c \
+					src/ft_printf/print_char.c \
+					src/ft_printf/print_hex.c \
+					src/ft_printf/print_nbr.c \
+					src/ft_printf/print_ptr.c \
+					src/ft_printf/print_str.c \
+					src/ft_printf/print_unsigned.c \
+					src/ft_printf/utils.c
+
+NAME =				libft.a
+INCLUDES =			-I./headers
+OBJ_DIR =			obj
+CC =				cc -c -Wall -Wextra -Werror
+AR =				ar rcs
+FT_PRINTF_OBJ =		$(addprefix $(OBJ_DIR)/, $(notdir $(FT_PRINTF_SRC:.c=.o)))
+OBJ =				$(addprefix $(OBJ_DIR)/, $(notdir $(SRC:.c=.o)))
+RM =				rm -rf
+
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
+
+$(NAME): $(OBJ) $(FT_PRINTF_OBJ)
 	@echo "$(GREEN)$(BOLD)Libft.a done!$(RESET)"
 
-$(OBJDIR)/%.o: $(SRCDIR)/%.c
-	@mkdir -p $(OBJDIR)
+$(OBJ_DIR)/%.o: %.c
+	@mkdir -p $(OBJ_DIR)
 	@$(CC) $< $(INCLUDES) -o $@
+	@echo "$(YELLOW)	inserting $@...$(RESET)"
 	@$(AR) $(NAME) $@
 
-bonus: $(OBJ) $(OBJ_BONUS)
-	@echo "$(GREEN)$(BOLD)Libft.a (bonus) done!$(RESET)"
-
 clean :
-	@echo "$(RED)Cleaning $(OBJDIR)...$(RESET)"
-	@${RM} $(OBJDIR)
+	@echo "$(RED)Cleaning $(OBJ_DIR)...$(RESET)"
+	@${RM} $(OBJ_DIR)
 
 fclean : clean
 	@echo "$(RED)Cleaning $(NAME)...$(RESET)"
@@ -50,4 +93,4 @@ fclean : clean
 
 re: fclean all
 
-.PHONY: bonus, all, clean, fclean, re
+.PHONY: all, clean, fclean, re
