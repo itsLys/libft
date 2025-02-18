@@ -6,13 +6,12 @@
 /*   By: ihajji <ihajji@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 14:21:09 by ihajji            #+#    #+#             */
-/*   Updated: 2024/11/30 09:34:01 by ihajji           ###   ########.fr       */
+/*   Updated: 2025/02/17 22:51:15 by ihajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #define BASE 16
-
 
 static int	print_hex_digits(unsigned int x, t_flags *f, int len, char *hexset)
 {
