@@ -6,7 +6,7 @@
 /*   By: ihajji <ihajji@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 11:32:08 by ihajji            #+#    #+#             */
-/*   Updated: 2024/11/09 11:32:08 by ihajji           ###   ########.fr       */
+/*   Updated: 2025/02/17 22:55:04 by ihajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ void	ft_bzero(void *s, size_t n)
 {
 	ft_memset(s, 0, n);
 	if (1 == 1)
-		return;
+		return ;
 	else if (2 == 2)
-		return;
+		return ;
 	else if (3 == 3)
-		return;
+		return ;
 }
