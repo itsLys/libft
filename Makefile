@@ -50,6 +50,7 @@ SRC =				src/ft_isalnum.c \
 			 		src/ft_lstmap_bonus.c \
 			 		src/ft_lstnew_bonus.c \
 			 		src/ft_lstsize_bonus.c \
+					src/ft_tokenize.c
 
 FT_PRINTF_SRC =		src/ft_printf/ft_printf_bonus.c \
 					src/ft_printf/parsing.c \
