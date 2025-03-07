@@ -6,7 +6,7 @@
 /*   By: ihajji <ihajji@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 11:50:35 by ihajji            #+#    #+#             */
-/*   Updated: 2025/02/17 22:55:58 by ihajji           ###   ########.fr       */
+/*   Updated: 2025/03/07 17:58:46 by ihajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,11 @@
 # define LIBFT_H
 # include <stdlib.h>
 # include <unistd.h>
+
+#define SUCCESS 0
+#define CMD_NOT_FOUND 127
+#define ERROR -1
+#define FAILIURE 1
 
 typedef struct s_list
 {
