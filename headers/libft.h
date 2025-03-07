@@ -6,7 +6,7 @@
 /*   By: ihajji <ihajji@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 11:50:35 by ihajji            #+#    #+#             */
-/*   Updated: 2025/03/07 17:58:46 by ihajji           ###   ########.fr       */
+/*   Updated: 2025/03/07 23:57:02 by ihajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,5 +75,9 @@ void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 int		ft_printf(const char *fmt, ...);
+int		ft_execvpe(char *file, char **av, char **envp);
 char	**ft_tokenize(char const *s);
+char	*ft_getenv(char **envp, char *var);
+char	**ft_getpath(char *path);
+void	*ft_free_vector(char **vector);
 #endif // !LIBFT_H
