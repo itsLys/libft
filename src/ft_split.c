@@ -42,14 +42,6 @@ static size_t	get_word_len(const char *s, char c)
 	return (len);
 }
 
-static char	**free_mem(char **list, size_t i)
-{
-	while (i-- > 0)
-		free(list[i]);
-	free(list);
-	return (NULL);
-}
-
 char	**ft_split(char const *s, char c)
 {
 	size_t	word_count;
@@ -70,7 +62,7 @@ char	**ft_split(char const *s, char c)
 			s++;
 		word = ft_substr(s, 0, get_word_len(s, c));
 		if (!word)
-			return (free_mem(list, i));
+			return (ft_free_vector(list));
 		list[i++] = word;
 		while (*s && *s != c)
 			s++;
