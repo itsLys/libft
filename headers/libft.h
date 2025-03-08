@@ -80,5 +80,6 @@ int					ft_execvpe(char *file, char **av, char **envp);
 char				**ft_tokenize(char const *s);
 char				*ft_getenv(char **envp, char *var);
 char				**ft_getpath(char *path);
-char				*ft_free_vector(char **vector);
+void				**ft_free_vector(char **vector);
+
 #endif // !LIBFT_H

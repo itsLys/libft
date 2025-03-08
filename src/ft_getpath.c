@@ -12,16 +12,6 @@
 
 #include "libft.h"
 
-// void	*ft_free_vector(char **split)
-// {
-// 	int	i;
-//
-// 	i = 0;
-// 	while (split[i])
-// 		free(split[i++]);
-// 	free(split);
-// 	return (NULL);
-// }
 
 char	**ft_getpath(char *path)
 {
@@ -37,7 +27,7 @@ char	**ft_getpath(char *path)
 	{
 		tmp = ft_strjoin(path_list[i], "/");
 		if (tmp == NULL)
-			return (ft_free_vector(path_list), ft_memlen);
+			return ((char **)ft_free_vector(path_list));
 		free(path_list[i]);
 		path_list[i++] = tmp;
 	}

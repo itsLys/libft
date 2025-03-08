@@ -12,13 +12,13 @@
 
 #include "libft.h"
 
-void	**ft_free_vector(char **split)
+void	**ft_free_vector(char **vector)
 {
 	int	i;
 
 	i = 0;
-	while (split[i])
-		free(split[i++]);
-	free(split);
+	while (vector[i])
+		free(vector[i++]);
+	free(vector);
 	return (NULL);
 }

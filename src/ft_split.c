@@ -62,7 +62,7 @@ char	**ft_split(char const *s, char c)
 			s++;
 		word = ft_substr(s, 0, get_word_len(s, c));
 		if (!word)
-			return (ft_free_vector(list));
+			return ((char **)ft_free_vector(list));
 		list[i++] = word;
 		while (*s && *s != c)
 			s++;

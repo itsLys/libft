@@ -53,7 +53,8 @@ SRC =				src/ft_isalnum.c \
 					src/ft_tokenize.c \
 					src/ft_execvpe.c \
 					src/ft_getenv.c \
-					src/ft_getpath.c
+					src/ft_getpath.c \
+					src/ft_free_vector.c
 
 FT_PRINTF_SRC =		src/ft_printf/ft_printf_bonus.c \
 					src/ft_printf/parsing.c \
