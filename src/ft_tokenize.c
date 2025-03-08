@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static size_t get_qoute_len(const char *s)
+static size_t	get_qoute_len(const char *s)
 {
 	char	qoute;
 	size_t	i;
@@ -24,17 +24,17 @@ static size_t get_qoute_len(const char *s)
 		i++;
 	if (s[i] == qoute)
 		i++;
-	return i;
+	return (i);
 }
 
-static size_t get_token_len(const char *s)
+static size_t	get_token_len(const char *s)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (s[i] && !(s[i] == ' ' || s[i] == '\t'))
 	{
-		if(s[i] == '"' || s[i] == '\'')
+		if (s[i] == '"' || s[i] == '\'')
 			i += get_qoute_len(&s[i]);
 		if (s[i] == '\\')
 			i++;
@@ -54,7 +54,7 @@ static size_t	count_tokens(const char *s)
 		while (*s && (*s == ' ' || *s == '\t') && !(*s == '"' || *s == '\''))
 			s++;
 		count++;
-		if(*s == '"' || *s == '\'')
+		if (*s == '"' || *s == '\'')
 			s += get_qoute_len(s);
 		s += get_token_len(s);
 	}
@@ -85,7 +85,7 @@ char	**ft_tokenize(char const *s)
 		return (NULL);
 	while (i < token_count)
 	{
-		while(*s == ' ' || *s == '\t')
+		while (*s == ' ' || *s == '\t')
 			s++;
 		token = ft_substr(s, 0, get_token_len(s));
 		if (!token)
