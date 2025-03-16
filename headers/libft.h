@@ -16,10 +16,15 @@
 # include <stdlib.h>
 # include <unistd.h>
 
+# define STDIN 0
+# define STDOUT 1
+# define STDERR 2
 # define SUCCESS 0
 # define CMD_NOT_FOUND 127
 # define ERROR -1
 # define FAILIURE 1
+# define TRUE !0
+# define FALSE 0
 
 typedef struct s_list
 {
