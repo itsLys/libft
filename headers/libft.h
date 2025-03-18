@@ -6,7 +6,7 @@
 /*   By: ihajji <ihajji@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 11:50:35 by ihajji            #+#    #+#             */
-/*   Updated: 2025/03/07 23:57:02 by ihajji           ###   ########.fr       */
+/*   Updated: 2025/03/18 07:44:02 by ihajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,9 @@ size_t				ft_strlen(const char *s);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 int					ft_strcmp(const char *s1, const char *s2);
 char				*ft_strnstr(const char *haystack, const char *needle,
-						size_t len);
+					size_t len);
+int ft_strisempty(char *str);
+int ft_strisdecimal(char *str);
 char				*ft_strrchr(const char *s, int c);
 char				*ft_strstr(const char *haystack, const char *needle);
 int					ft_tolower(int c);
@@ -80,7 +82,7 @@ void				ft_lstdelone(t_list *lst, void (*del)(void *));
 void				ft_lstclear(t_list **lst, void (*del)(void *));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
-						void (*del)(void *));
+					 void (*del)(void *));
 int					ft_printf(const char *fmt, ...);
 int					ft_execvpe(char *file, char **av, char **envp);
 char				**ft_tokenize(char const *s);

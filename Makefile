@@ -26,6 +26,8 @@ SRC =				src/ft_isalnum.c \
 			 		src/ft_putnbr_fd.c \
 			 		src/ft_putstr_fd.c \
 			 		src/ft_split.c \
+			 		src/ft_strisempty.c \
+			 		src/ft_strisdecimal.c \
 			 		src/ft_strchr.c \
 			 		src/ft_strdup.c \
 			 		src/ft_striteri.c \
