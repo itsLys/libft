@@ -23,8 +23,8 @@
 # define CMD_NOT_FOUND 127
 # define ERROR -1
 # define FAILIURE 1
-# define TRUE !0
 # define FALSE 0
+# define TRUE 1
 
 typedef struct s_list
 {
@@ -32,6 +32,7 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 int					ft_atoi(const char *nptr);
+long				ft_atol(const char *nptr);
 double				ft_atof(char *str);
 void				ft_bzero(void *s, size_t n);
 void				*ft_calloc(size_t nmemb, size_t size);

@@ -12,6 +12,7 @@ SRC =				src/ft_isalnum.c \
 			 		src/ft_itoa.c \
 			 		src/ft_atof.c \
 			 		src/ft_atoi.c \
+			 		src/ft_atol.c \
 			 		src/ft_bzero.c \
 			 		src/ft_calloc.c \
 			 		src/ft_memchr.c \
