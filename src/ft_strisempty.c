@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_strisempty(char *str)
+int	ft_strisempty(char *str)
 {
 	while (*str && *str == ' ')
 		str++;

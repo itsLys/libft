@@ -12,11 +12,11 @@
 
 #include "libft.h"
 
-int ft_strisdecimal(char *str)
+int	ft_strisdecimal(char *str)
 {
 	if (*str == '-' || *str == '+')
 		str++;
 	while (ft_isdigit(*str))
 		str++;
-	return !(*str);
+	return (!(*str));
 }

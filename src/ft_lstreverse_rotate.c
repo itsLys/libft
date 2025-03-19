@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_getpath.c                                       :+:      :+:    :+:   */
+/*   ft_lstreverse_rotate.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ihajji <ihajji@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/07 17:53:29 by ihajji            #+#    #+#             */
-/*   Updated: 2025/03/07 17:59:01 by ihajji           ###   ########.fr       */
+/*   Created: 2025/03/19 10:23:09 by ihajji            #+#    #+#             */
+/*   Updated: 2025/03/19 10:23:09 by ihajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**ft_getpath(char *path)
+void	ft_lstreverse_rotate(t_list **head)
 {
-	char	**path_list;
-	char	*tmp;
-	int		i;
+	t_list	*last;
+	t_list	**list;
 
-	path_list = ft_split(path, ':');
-	if (path_list == NULL)
-		return (NULL);
-	i = 0;
-	while (path_list[i])
-	{
-		tmp = ft_strjoin(path_list[i], "/");
-		if (tmp == NULL)
-			return ((char **)ft_free_vector(path_list));
-		free(path_list[i]);
-		path_list[i++] = tmp;
-	}
-	return (path_list);
+	if (head == NULL || ft_lstsize(*head) <= 1)
+		return ;
+	last = ft_lstlast(*head);
+	last->next = *head;
+	list = head;
+	while ((*list)->next != last)
+		*list = (*list)->next;
+	(*list)->next = NULL;
+	*head = last;
 }

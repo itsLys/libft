@@ -44,15 +44,19 @@ SRC =				src/ft_isalnum.c \
 			 		src/ft_tolower.c \
 			 		src/ft_strcmp.c \
 			 		src/ft_toupper.c \
-			 		src/ft_lstadd_back_bonus.c \
-			 		src/ft_lstadd_front_bonus.c \
-			 		src/ft_lstclear_bonus.c \
-			 		src/ft_lstdelone_bonus.c \
-			 		src/ft_lstiter_bonus.c \
-			 		src/ft_lstlast_bonus.c \
-			 		src/ft_lstmap_bonus.c \
-			 		src/ft_lstnew_bonus.c \
-			 		src/ft_lstsize_bonus.c \
+			 		src/ft_lstadd_back.c \
+			 		src/ft_lstadd_front.c \
+			 		src/ft_lstclear.c \
+			 		src/ft_lstpush.c \
+			 		src/ft_lstswap.c \
+			 		src/ft_lstrotate.c \
+			 		src/ft_lstreverse_rotate.c \
+			 		src/ft_lstdelone.c \
+			 		src/ft_lstiter.c \
+			 		src/ft_lstlast.c \
+			 		src/ft_lstmap.c \
+			 		src/ft_lstnew.c \
+			 		src/ft_lstsize.c \
 					src/ft_tokenize.c \
 					src/ft_execvpe.c \
 					src/ft_getenv.c \
