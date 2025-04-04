@@ -62,6 +62,7 @@ char				*ft_strstr(const char *haystack, const char *needle);
 int					ft_tolower(int c);
 int					ft_toupper(int c);
 char				*ft_itoa(int n);
+void				ft_swap(int *a, int *b);
 int					ft_strisnum(char *str);
 char				*ft_substr(char const *s, unsigned int start, size_t len);
 char				*ft_strjoin(char const *s1, char const *s2);
